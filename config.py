@@ -40,7 +40,7 @@ class Config:
     tushare_token: Optional[str] = None
     
     # === AI 分析配置 ===
-    gemini_api_key: Optional[str] = None
+    gemini_api_key: Optional[str] = "AIzaSyCEwjst_NP_YnEs0eKs-alzXWRzthsh2ss"
     gemini_model: str = "gemini-3-flash-preview"  # 主模型
     gemini_model_fallback: str = "gemini-2.5-flash"  # 备选模型
     
@@ -82,8 +82,8 @@ class Config:
     
     # 自定义 Webhook（支持多个，逗号分隔）
     # 适用于：钉钉、Discord、Slack、自建服务等任意支持 POST JSON 的 Webhook
-    custom_webhook_urls: List[str] = field(default_factory=list)
-    custom_webhook_bearer_token: Optional[str] = None  # Bearer Token（用于需要认证的 Webhook）
+    custom_webhook_urls: List[str] = field("https://oapi.dingtalk.com/robot/send?access_token=6a38a91fed2ccd37ea44785ccd712789c9c8fdea068360e35510afcb12dc85f4")
+    custom_webhook_bearer_token: Optional[str] = "SEC7cd11044e103e76fccee30ec631a1bda550db99bf6c59eaff732a8818d5188b3"  # Bearer Token（用于需要认证的 Webhook）
     
     # 单股推送模式：每分析完一只股票立即推送，而不是汇总后推送
     single_stock_notify: bool = False
